@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 2000px;
+    height: 1000px;
+   
+}
+</style>
+</head>
+<body>
+<p>Mouse over the screen to get the horizontal and vertical coordinates of your mouse pointer.</p>
+
+<p id="demo"></p>
+
+<div onmousemove="showCoords(event)" onmouseout="clearCoor()"></div>
+
+
+
+<script>
+function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coor = "X coords: " + x + ", Y coords: " + y;
+    var currentTime = new Date()
+ var hours = currentTime.getHours()
+ var minutes = currentTime.getMinutes()
+var seconds = currentTime.getSeconds()
+
+ if (minutes < 10)
+ minutes = "0" + minutes
+var t= "time---"+ hours + ":" +minutes+":" +seconds+"-----coordinates---"+ coor; 
+document.getElementById("demo").innerHTML = t;
+
+}
+
+function clearCoor() {
+    document.getElementById("demo").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
